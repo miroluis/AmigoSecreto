@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>Amigo Secreto</title>
+    <meta charset="UTF-8" name="titulo" content="Amigo Secreto" />
+    
+    
+<meta name="Descrição" content="Este programa distribui amigos a partir de uma lista de amigos, assim cada amigo fica a saber a quem tem de dar uma prenda sem saber quem lhe dá a ele. Amigo Secreto" />
+<meta name="keywords" content="Este programa distribui amigos a partir de uma lista de amigos, assim cada amigo fica a saber a quem tem de dar uma prenda sem saber quem lhe dá a ele. Amigo Secreto" />
+
+    <meta http-equiv="content-language" content="pt-pt" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    
+    <script type="text/javascript"></script>
+</head>
+<body> 
+
+    <div class="container_main" >
+        <a href="http://www.miroelectronics.com/"><img class="logo" src="http://www.miroelectronics.com/_/rsrc/1331036806029/config/customLogo.gif?revision=5" width="197" height="161" alt="www.miroelectronics.com Amigo Secreto" title="www.miroelectronics.com Amigo Secreto" /></a>
+        <div class="clear"></div>
+        
+
+<!--/secret-santa-generator-->
+<form method="post" action="Gerador.php" id="addlottery" >		
+	<div class="container_split">
+			<h1>Amigo Secreto</h1>
+			<p>Coloca aqui a tua lista de amigos e gera automaticamente amigos secretos</p>
+			<p>Primeiro o teu nome e email</p>
+		</div>
+		
+		<div class="clear"></div>
+		<div class="container_wide">
+			<div id="memberlist">
+				<div class="clear"></div>
+				<div class="container_fields" id="member_1">
+					<div>
+						<input  class="member_name" type="text" id="membername_1" placeholder="Nome" name="MemberName[]" maxlength="32" value="" autocorrect="off" autocapitalize="off" spellcheck="false" />
+						<input class="member_email" type="email" id="memberemail_1" name="MemberEmail[]" placeholder="Email" maxlength="256" value=""  autocorrect="off" autocapitalize="off" spellcheck="false" />
+					</div>
+				</div>
+                <div class="clear"></div>
+                <div class="">
+                    A seguir coloca os nomes e email dos teus amigos.
+                </div>
+                <div class="clear05"></div>
+				<div class="clear"></div>
+				<div class="container_fields" id="member_2">
+					<div>
+						<input  class="member_name" type="text" id="membername_2" name="MemberName[]" placeholder="Nome" maxlength="32" value="" autocorrect="off" autocapitalize="off" spellcheck="false" />
+						<input class="member_email" placeholder="Email" type="email" id="memberemail_2" name="MemberEmail[]" maxlength="256" value=""  autocorrect="off" autocapitalize="off" spellcheck="false" />
+					</div>
+				</div>
+				<div class="container_fields" id="member_3">
+					<div>
+						<input placeholder="Nome" class="member_name" type="text" id="membername_3" name="MemberName[]" maxlength="32" value="" autocorrect="off" autocapitalize="off" spellcheck="false" />
+						<input class="member_email" placeholder="Email" type="email" id="memberemail_3" name="MemberEmail[]" maxlength="256" value=""  autocorrect="off" autocapitalize="off" spellcheck="false" />
+					</div>
+				</div>
+				<div class="container_fields" id="member_4">
+					<div>
+						<input placeholder="Nome" class="member_name" type="text" id="membername_4" name="MemberName[]" maxlength="32" value="" autocorrect="off" autocapitalize="off" spellcheck="false" />
+						<input class="member_email" placeholder="Email" type="email" id="memberemail_4" name="MemberEmail[]" maxlength="256" value=""  autocorrect="off" autocapitalize="off" spellcheck="false" />
+					</div>
+				</div>
+				<div class="container_fields" id="member_5">
+					<div>
+						<input placeholder="Nome" class="member_name" type="text" id="membername_5" name="MemberName[]" maxlength="32" value="" autocorrect="off" autocapitalize="off" spellcheck="false" />
+						<input class="member_email" placeholder="Email" type="email" id="memberemail_5" name="MemberEmail[]" maxlength="256" value=""  autocorrect="off" autocapitalize="off" spellcheck="false" />
+					</div>
+				</div>
+                <div class="clear"></div>
+
+                    <button>Adiciona mais amigos</button>
+
+<div>
+  <label for="Mensagem">
+    Introduz aqui a tua mensagem!<br>
+  </label>
+  <textarea name="Mensagem" cols = "50" rows = "10"></textarea><br>
+  A seguir a esta mensagem irá o seguinte texto.<br> 
+  Este ano terás de entregar prenda a NOME DO AMIGO.<br>
+  NOME DO AMIGO é a quem o receptor do email tem de entregar o presente.
+  </div>
+
+            
+       
+            </div>
+            <input type="hidden" name="Excludes" value="true" />
+            <input type="hidden" name="RemoveMember" value="0" id="memberremove" />
+			<input type="hidden" name="Groupsize" id="groupsize" value="5" />
+			<input type="hidden" name="Step" value="Start" />
+            <input type="hidden" name="type" value="General" />
+			<input type="hidden" name="TransactionId" value="2BABE15308AA5" /><input type="hidden" name="TransactionTimecode" value="90CCA8AAEAEE884" />
+            <div class="spacer"></div>
+			<!--<input type="submit" name="NextStep" value="Continueeee" class="button" />
+		-->
+            <br />
+        </div>
+        <div class="clear"></div>
+        <div class="container_split">
+           Agora clica em continuar para avançares
+        </div>
+        	<input type="submit">
+</form></div>
+<div class="container_banner">
+</div>
+       
+        
+	</div>
+    <script src="http://static.drawnames.com/Scripts/jquery-1.5.1.min.js" type="text/javascript"></script>
+    
+<script type="text/javascript">
+    $(document).ready(function () {
+$('#membername_1').focus();    });
+
+
+	
+	  $("button").click(function(e){
+	  	e.preventDefault();
+	  	console.log($('#addlottery').serialize());
+	  	//console.log("clic");
+
+	  	var count = $('.container_fields').length + 1;
+	  	var elem = "<div class=\"container_fields\" id=\"member_"+ count +"\"><div><input placeholder=\"Nome\" class=\"member_name\" type=\"text\" name=\"MemberName[]\" maxlength=\"32\" value=\"\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" /> <input class=\"member_email\" placeholder=\"Email\" type=\"email\" name=\"MemberEmail[]\" maxlength=\"256\" value=\"\"  autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" /></div></div>";
+
+	    $(elem).insertAfter(".container_fields:last");
+	  });
+	
+	
+
+
+
+	function addMember2()
+	{
+		alert('Hello World!');
+        var eGroupsize = document.getElementById('groupsize');
+        if ((parseInt(eGroupsize.value) + 5) <= 150) {    
+		    eGroupsize.value = parseInt(eGroupsize.value) + 5;
+		    submitForm();
+        }
+        else {
+            //Show Message Max Members?
+            alert('é grande?');
+        }
+	}		
+	function changeGroupsize(){
+		submitForm();
+	}		
+	function submitForm2(){
+		var eForm = document.getElementById('addlottery');
+		eForm.submit();
+	}
+</script>
+
+</body>
